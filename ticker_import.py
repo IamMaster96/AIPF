@@ -63,7 +63,8 @@ def fetch_time_series_data(ticker, start_date, online=True, output_size="compact
     except Exception as e:
         print(f"Failed to fetch time series data for {ticker}: {e}")
         return pd.DataFrame()
-
+def plot_value(trades,prices):
+    
 # Example tickers
 tickers = ["VOO","VOOG","IBIT"]
 start_date = "2025-01-01"
@@ -80,5 +81,8 @@ for ticker in tickers:
 
 # Place the full data in a DataFrame
 df = pd.DataFrame(all_records)
+
+trades = pd.read_csv("trades.csv")
+
 # Convert date to datetime format
 print(df)
